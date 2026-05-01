@@ -62,7 +62,7 @@ const Navbar = () => {
         </nav>
         <Button
           asChild
-          className='relative isolate hidden h-12 w-[11.25rem] gap-2 overflow-visible rounded-full bg-[image:var(--gradient-brand)] px-0 text-base-white shadow-[var(--shadow-brand-glow)] transition-transform duration-300 before:pointer-events-none before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--gradient-brand)] before:opacity-30 before:blur-xl before:transition-opacity before:duration-300 hover:scale-[1.02] hover:text-base-white hover:before:opacity-80 lg:flex'
+          className='hidden h-10 gap-2 rounded-full bg-[image:var(--gradient-brand)] px-6 text-base-white shadow-[var(--shadow-brand-glow)] hover:text-base-white lg:flex'
         >
           <Link href='#contact'>
             <Mail className='size-4' aria-hidden='true' />
@@ -94,7 +94,7 @@ const Navbar = () => {
 
             <Button
               asChild
-              className='relative isolate mt-3 h-12 w-full gap-2 overflow-visible rounded-full bg-[image:var(--gradient-brand)] text-base-white shadow-[var(--shadow-brand-glow)] transition-transform duration-300 before:pointer-events-none before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--gradient-brand)] before:opacity-30 before:blur-xl before:transition-opacity before:duration-300 hover:scale-[1.01] hover:text-base-white hover:before:opacity-80'
+              className='mt-3 w-full gap-2 rounded-full bg-[image:var(--gradient-brand)] text-base-white shadow-[var(--shadow-brand-glow)] hover:text-base-white'
             >
               <SheetClose asChild>
                 <Link href='#contact'>
