@@ -44,7 +44,7 @@ const Hero = () => {
           title='Elite Solutions'
           description='Cutting-edge tech, flawless execution'
           animationDelay={0.2}
-          className='absolute top-[10%] right-1/2 -translate-x-[6.25%]'
+          className='absolute top-[10%] right-1/2 translate-x-[-6.25%]'
         />
         <FeatureCard
           icon={<Icon icon='ri:brain-fill' />}
@@ -58,10 +58,10 @@ const Hero = () => {
           title='Real Impact'
           description='We turn ideas into measurable success'
           animationDelay={0.2}
-          className='absolute top-[49%] right-1/2 -translate-x-[48%]'
+          className='absolute top-[49%] right-1/2 translate-x-[-48%]'
         />
 
-        <div className='from-base-background absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t to-transparent' />
+        <div className='from-base-background absolute inset-x-0 bottom-0 h-[20%] bg-linear-to-t to-transparent' />
       </div>
     </section>
   );
