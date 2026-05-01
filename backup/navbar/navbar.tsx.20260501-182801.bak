@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,10 +22,7 @@ const Navbar = () => {
   const background = useTransform(
     scrollY,
     [0, 100],
-    [
-      'color-mix(in srgb, var(--color-base-background) 0%, transparent)',
-      'color-mix(in srgb, var(--color-base-background) 70%, transparent)',
-    ]
+    ['rgba(12,13,13,0', 'rgba(12,13,13,0.5)']
   );
   const backdropBlur = useTransform(
     scrollY,
@@ -47,7 +44,7 @@ const Navbar = () => {
           alt='logo'
           width={158}
           height={56}
-          className='h-10 w-10 object-contain max-md:h-8 max-md:w-8'
+          className='max-md:h-8 max-md:w-35.25'
         />
         <nav className='hidden lg:block'>
           <ul className='flex-start gap-3'>
@@ -60,14 +57,8 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
-        <Button
-          asChild
-          className='hidden h-10 gap-2 rounded-full bg-[image:var(--gradient-brand)] px-6 text-base-white shadow-[var(--shadow-brand-glow)] hover:text-base-white lg:flex'
-        >
-          <Link href='#contact'>
-            <Mail className='size-4' aria-hidden='true' />
-            Hire Me
-          </Link>
+        <Button asChild className='hidden lg:flex'>
+          <Link href='#contact'>Get Started</Link>
         </Button>
 
         <Sheet>
@@ -92,15 +83,9 @@ const Navbar = () => {
               </ul>
             </nav>
 
-            <Button
-              asChild
-              className='mt-3 w-full gap-2 rounded-full bg-[image:var(--gradient-brand)] text-base-white shadow-[var(--shadow-brand-glow)] hover:text-base-white'
-            >
+            <Button asChild className='mt-3 w-full'>
               <SheetClose asChild>
-                <Link href='#contact'>
-                  <Mail className='size-4' aria-hidden='true' />
-                  Hire Me
-                </Link>
+                <Link href='#contact'>Get Started</Link>
               </SheetClose>
             </Button>
           </SheetContent>
