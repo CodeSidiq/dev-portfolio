@@ -19,7 +19,7 @@ const Hero = () => {
             - bg-position controls horizontal / vertical alignment
             - opacity controls final grid visibility
         */}
-        <div className="absolute inset-0 bg-[url('/assets/ornaments/grid-pattern.svg')] bg-[length:max(721px,100vw)_auto] md:bg-[length:max(1442px,100vw)_auto] bg-[position:center_top] bg-no-repeat opacity-100 md:bg-[position:calc(50%+48px)_top] lg:bg-[position:calc(50%+110px)_top]" />
+        <div className="absolute inset-0 bg-[url('/assets/ornaments/grid-pattern.svg')] bg-[length:clamp(721px,100vw,1442px)_auto] bg-[position:center_top] bg-no-repeat opacity-100 md:bg-[position:calc(50%+48px)_top] lg:bg-[position:calc(50%+110px)_top]" />
 
         {/* Glow Dot Pattern Layer
             - data-driven dots for easy add / remove
