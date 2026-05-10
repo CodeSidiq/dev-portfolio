@@ -29,8 +29,8 @@ const FormStatusDialog: React.FC<FormStatusDialogProps> = ({
           <Image
             src={
               variant === 'success'
-                ? '/icons/icon-form-message-success.svg'
-                : '/icons/icon-form-message-error.svg'
+                ? '/assets/icons/icon-form-message-success.svg'
+                : '/assets/icons/icon-form-message-error.svg'
             }
             alt={variant === 'success' ? 'success' : 'error'}
             width={220}

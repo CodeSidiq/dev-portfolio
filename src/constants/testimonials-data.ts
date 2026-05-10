@@ -1,13 +1,8 @@
-import { StaticImageData } from 'next/image';
-
-import profile1Src from '../../public/images/profile1.jpg';
-import profile2Src from '../../public/images/profile2.jpg';
-import profile3Src from '../../public/images/profile3.jpg';
 
 type Testimonial = {
   rating: number;
   description: string;
-  profileSrc: StaticImageData;
+  profileSrc: string;
   profileName: string;
   profileOccupation: string;
 };
@@ -17,7 +12,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 4,
     description:
       'Working with Syntax has been a game-changer for our business. Their IT solutions streamlined our operations and helped us scale faster than we expected. Highly recommended!',
-    profileSrc: profile1Src,
+    profileSrc: '/assets/images/profile1.jpg',
     profileName: 'Michael Anderson',
     profileOccupation: 'CEO of FinTech Solutions',
   },
@@ -25,7 +20,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 5,
     description:
       'The UI/UX design provided by Syntax completely transformed our platform. Our users love the new interface, and engagement rates have significantly increased',
-    profileSrc: profile2Src,
+    profileSrc: '/assets/images/profile2.jpg',
     profileName: 'Sarah Thompson',
     profileOccupation: 'Head of Product at E-Hub',
   },
@@ -33,7 +28,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 4,
     description:
       'Cybersecurity was a major concern for us, but Syntax delivered a secure and scalable solution that gave us peace of mind. Their team is truly professional and reliable.',
-    profileSrc: profile3Src,
+    profileSrc: '/assets/images/profile3.jpg',
     profileName: 'David Collins',
     profileOccupation: 'CTO of MedTech Innovations',
   },
@@ -41,7 +36,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 5,
     description:
       'Working with Syntax has been a game-changer for our business. Their IT solutions streamlined our operations and helped us scale faster than we expected. Highly recommended!',
-    profileSrc: profile1Src,
+    profileSrc: '/assets/images/profile1.jpg',
     profileName: 'Michael Anderson',
     profileOccupation: 'CEO of FinTech Solutions',
   },
@@ -49,7 +44,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 4,
     description:
       'The UI/UX design provided by Syntax completely transformed our platform. Our users love the new interface, and engagement rates have significantly increased',
-    profileSrc: profile2Src,
+    profileSrc: '/assets/images/profile2.jpg',
     profileName: 'Sarah Thompson',
     profileOccupation: 'Head of Product at E-Hub',
   },
@@ -57,7 +52,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 5,
     description:
       'Cybersecurity was a major concern for us, but Syntax delivered a secure and scalable solution that gave us peace of mind. Their team is truly professional and reliable.',
-    profileSrc: profile3Src,
+    profileSrc: '/assets/images/profile3.jpg',
     profileName: 'David Collins',
     profileOccupation: 'CTO of MedTech Innovations',
   },
@@ -65,7 +60,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 4,
     description:
       'Working with Syntax has been a game-changer for our business. Their IT solutions streamlined our operations and helped us scale faster than we expected. Highly recommended!',
-    profileSrc: profile1Src,
+    profileSrc: '/assets/images/profile1.jpg',
     profileName: 'Michael Anderson',
     profileOccupation: 'CEO of FinTech Solutions',
   },
@@ -73,7 +68,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 5,
     description:
       'The UI/UX design provided by Syntax completely transformed our platform. Our users love the new interface, and engagement rates have significantly increased',
-    profileSrc: profile2Src,
+    profileSrc: '/assets/images/profile2.jpg',
     profileName: 'Sarah Thompson',
     profileOccupation: 'Head of Product at E-Hub',
   },
@@ -81,7 +76,7 @@ export const testimonialsData: Testimonial[] = [
     rating: 4,
     description:
       'Cybersecurity was a major concern for us, but Syntax delivered a secure and scalable solution that gave us peace of mind. Their team is truly professional and reliable.',
-    profileSrc: profile3Src,
+    profileSrc: '/assets/images/profile3.jpg',
     profileName: 'David Collins',
     profileOccupation: 'CTO of MedTech Innovations',
   },

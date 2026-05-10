@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react';
-import { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import React from 'react';
 
@@ -46,7 +45,7 @@ export default Testimonials;
 type TestimonialCardProps = {
   rating: number;
   description: string;
-  profileSrc: StaticImageData;
+  profileSrc: string;
   profileName: string;
   profileOccupation: string;
 };
@@ -80,6 +79,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         <Image
           src={profileSrc}
           alt={profileName}
+          width={48}
+          height={48}
           className='size-12 rounded-full'
         />
         <div>

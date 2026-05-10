@@ -1,35 +1,29 @@
-import { StaticImageData } from 'next/image';
-
-import iconFacebook from '../../public/icons/icon-facebook.svg';
-import iconInstagram from '../../public/icons/icon-instagram.svg';
-import iconLinkedIn from '../../public/icons/icon-linkedin.svg';
-import iconTiktok from '../../public/icons/icon-tiktok.svg';
 
 type Icon = {
   href: string;
-  src: StaticImageData;
+  src: string;
   alt: string;
 };
 
 export const socialMediaData: Icon[] = [
   {
     href: 'https://www.facebook.com/',
-    src: iconFacebook,
+    src: '/assets/icons/icon-facebook.svg',
     alt: 'Facebook',
   },
   {
     href: 'https://www.instagram.com/',
-    src: iconInstagram,
+    src: '/assets/icons/icon-instagram.svg',
     alt: 'Instagram',
   },
   {
     href: 'https://www.linkedin.com/',
-    src: iconLinkedIn,
+    src: '/assets/icons/icon-linkedin.svg',
     alt: 'LinkedIn',
   },
   {
     href: 'https://www.tiktok.com/',
-    src: iconTiktok,
+    src: '/assets/icons/icon-tiktok.svg',
     alt: 'Tiktok',
   },
 ];

@@ -1,55 +1,44 @@
-import { StaticImageData } from 'next/image';
-
-import AdobeIcon from '../../public/icons/icon-adobe.svg';
-import AirbnbIcon from '../../public/icons/icon-airbnb.svg';
-import DatabricksIcon from '../../public/icons/icon-databricks.svg';
-import DropboxIcon from '../../public/icons/icon-dropbox.svg';
-import NetflixIcon from '../../public/icons/icon-netflix.svg';
-import PaypalIcon from '../../public/icons/icon-paypal.svg';
-import PostmanIcon from '../../public/icons/icon-postman.svg';
-import UpworkIcon from '../../public/icons/icon-upwork.svg';
-import ZoomIcon from '../../public/icons/icon-zoom.svg';
 
 type TrustedCompanyImageProps = {
-  src: StaticImageData;
+  src: string;
   alt: string;
 };
 
 export const trustedCompaniesData: TrustedCompanyImageProps[] = [
   {
-    src: AdobeIcon,
+    src: '/assets/icons/icon-adobe.svg',
     alt: 'Adobe',
   },
   {
-    src: AirbnbIcon,
+    src: '/assets/icons/icon-airbnb.svg',
     alt: 'Airbnb',
   },
   {
-    src: DatabricksIcon,
+    src: '/assets/icons/icon-databricks.svg',
     alt: 'Databricks',
   },
   {
-    src: DropboxIcon,
+    src: '/assets/icons/icon-dropbox.svg',
     alt: 'Dropbox',
   },
   {
-    src: NetflixIcon,
+    src: '/assets/icons/icon-netflix.svg',
     alt: 'Netflix',
   },
   {
-    src: PaypalIcon,
+    src: '/assets/icons/icon-paypal.svg',
     alt: 'PayPal',
   },
   {
-    src: PostmanIcon,
+    src: '/assets/icons/icon-postman.svg',
     alt: 'Postman',
   },
   {
-    src: UpworkIcon,
+    src: '/assets/icons/icon-upwork.svg',
     alt: 'Upwork',
   },
   {
-    src: ZoomIcon,
+    src: '/assets/icons/icon-zoom.svg',
     alt: 'Zoom',
   },
 ];

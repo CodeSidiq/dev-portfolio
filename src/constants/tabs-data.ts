@@ -1,15 +1,10 @@
-import { StaticImageData } from 'next/image';
-
-import tab1Src from '../../public/images/tab1.jpg';
-import tab2Src from '../../public/images/tab2.jpg';
-import tab3Src from '../../public/images/tab3.jpg';
 
 type TabData = {
   key: string;
   label: string;
   title: string;
   description: string;
-  imageSrc: StaticImageData;
+  imageSrc: string;
 };
 
 export const tabsData: TabData[] = [
@@ -19,7 +14,7 @@ export const tabsData: TabData[] = [
     title: 'Secure & Scalable Financial Solutions',
     description:
       'We help financial institutions with secure, data-driven, and compliant technology solutions to enhance transactions and customer experiences',
-    imageSrc: tab1Src,
+    imageSrc: '/assets/images/tab1.jpg',
   },
   {
     key: 'healthcare',
@@ -27,7 +22,7 @@ export const tabsData: TabData[] = [
     title: 'Innovative Tech for Better Healthcare',
     description:
       'We build HIPAA-compliant, AI-powered healthcare solutions for better patient care, data management, and operational efficiency',
-    imageSrc: tab2Src,
+    imageSrc: '/assets/images/tab2.jpg',
   },
   {
     key: 'e-commerce',
@@ -35,6 +30,6 @@ export const tabsData: TabData[] = [
     title: 'Seamless Shopping & Smart Retail Tech',
     description:
       'Enhance customer experience and streamline operations with AI-powered e-commerce platforms, smart inventory systems, and payment solutions',
-    imageSrc: tab3Src,
+    imageSrc: '/assets/images/tab3.jpg',
   },
 ];

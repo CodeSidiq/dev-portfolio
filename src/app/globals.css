@@ -69,13 +69,25 @@
   --color-neutral-900: #181d27;
   --color-neutral-950: #0a0d12;
 
-  --color-primary-100: #e5f4fb;
-  --color-primary-200: #6fcfff;
-  --color-primary-300: #0093dd;
-  --color-primary-400: #050a1b;
+  --color-primary-100: #f4eafe;
+  --color-primary-200: #dc49a6;
+  --color-primary-300: #8746eb;
+  --color-primary-400: #16051f;
 
   --color-base-white: #ffffff;
   --color-base-background: #0c0d0d;
+
+  /* Personal Brand Theme */
+  --color-brand-purple: #8746eb;
+  --color-brand-pink: #dc49a6;
+  --color-brand-purple-soft: #a855f7;
+  --color-brand-pink-soft: #ec4899;
+
+  --gradient-brand: linear-gradient(135deg, var(--color-brand-pink), var(--color-brand-purple));
+  --gradient-brand-soft: linear-gradient(135deg, rgba(220, 73, 166, 0.24), rgba(135, 70, 235, 0.24));
+
+  --shadow-brand-glow: 0 0 56px rgba(135, 70, 235, 0.32);
+  --shadow-pink-glow: 0 0 56px rgba(220, 73, 166, 0.24);
 
   /* Radius */
   --radius-xxs: 0.125rem;
@@ -196,7 +208,7 @@ html {
 body {
   @apply bg-base-background text-sm font-normal text-white;
 
-  font-family: var(--font-poppins);
+  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
 }
 
 @layer components {

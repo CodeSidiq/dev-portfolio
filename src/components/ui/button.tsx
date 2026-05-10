@@ -11,11 +11,14 @@ const buttonVariants = cva(
       variant: {
         default:
           'bg-primary-300 text-sm-medium text-neutral-25 rounded-full hover:shadow-[0_0_17px_rgba(0,147,221,0.6)]',
+        brand:
+          'rounded-full bg-[image:var(--gradient-brand)] text-sm font-medium tracking-[-0.01em] text-neutral-25 shadow-[0_0_24px_rgba(220,73,166,0.28)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_34px_rgba(135,70,235,0.42)] focus-visible:ring-2 focus-visible:ring-brand-pink/70 focus-visible:ring-offset-2 focus-visible:ring-offset-base-background',
         outline:
           'border border-neutral-800 rounded-full hover:border-neutral-700',
       },
       size: {
         default: 'h-11 px-14.5',
+        brand: 'h-12 px-10',
         icon: 'size-10 md:size-12',
       },
     },

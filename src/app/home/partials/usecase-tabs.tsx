@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -41,7 +41,7 @@ export default UseCaseTabs;
 type ContentProps = {
   title: string;
   description: string;
-  imageSrc: StaticImageData;
+  imageSrc: string;
 };
 
 const Content: React.FC<ContentProps> = ({ title, description, imageSrc }) => {
@@ -61,6 +61,8 @@ const Content: React.FC<ContentProps> = ({ title, description, imageSrc }) => {
       <Image
         src={imageSrc}
         alt={title}
+        width={520}
+        height={520}
         className='aspect-square flex-[2.6] basis-75 rounded-2xl object-cover'
       />
     </div>

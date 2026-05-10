@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import React from 'react';
 
@@ -38,7 +37,7 @@ const Cards: React.FC<CardsProps> = ({ children }) => {
 };
 
 type CardProps = {
-  imageSrc: StaticImageData;
+  imageSrc: string;
   name: string;
   description: string;
 };
@@ -49,6 +48,8 @@ const Card: React.FC<CardProps> = ({ imageSrc, name, description }) => {
       <Image
         src={imageSrc}
         alt={name}
+        width={520}
+        height={520}
         className='aspect-square rounded-2xl object-cover md:rounded-4xl'
       />
       <h4 className='text-lg-semibold text-neutral-25 mt-4'>{name}</h4>

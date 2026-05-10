@@ -10,7 +10,7 @@ const Footer = () => {
       <div className='custom-container flex flex-col justify-between gap-6 py-10 md:flex-row md:items-center'>
         <div>
           <Image
-            src='/images/logo.svg'
+            src='/assets/images/logo.svg'
             alt='logo'
             width={158}
             height={56}
@@ -27,7 +27,13 @@ const Footer = () => {
               href={icon.href}
               className='flex-center size-10 rounded-full border border-neutral-800 p-2.5'
             >
-              <Image src={icon.src} alt={icon.alt} className='h-full w-auto' />
+              <Image
+                src={icon.src}
+                alt={icon.alt}
+                width={24}
+                height={24}
+                className='h-full w-auto'
+              />
             </Link>
           ))}
         </div>

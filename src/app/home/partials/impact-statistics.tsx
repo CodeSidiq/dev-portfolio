@@ -8,7 +8,7 @@ const ImpactStatistics = () => {
       id='about'
     >
       <Image
-        src='/images/impact-image.jpg'
+        src='/assets/images/impact-image.jpg'
         alt='impact image'
         width={442}
         height={432}

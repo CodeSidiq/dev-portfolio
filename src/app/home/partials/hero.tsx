@@ -1,67 +1,167 @@
-import { Icon } from '@iconify/react';
+// src/app/home/partials/hero.tsx
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 import { Button } from '@/components/ui/button';
-import FeatureCard from '@/components/ui/feature-card';
-import SkewMotion from '@/components/ui/skew-motion';
+import { HERO_DATA, HERO_GLOW_DOTS } from '@/constants/hero-data';
 
 const Hero = () => {
   return (
     <section
-      className='custom-container flex flex-wrap items-center gap-7 overflow-hidden pt-28 md:gap-10 md:pt-36.75'
       id='hero'
+      className='relative overflow-hidden pt-32 pb-20 text-center'
     >
-      <div className='flex-[5.3] basis-80'>
-        <h1 className='display-lg-bold md:display-2xl-bold text-neutral-25'>
-          Your Trusted IT{' '}
-          <span className='text-primary-300'>Partner for Digital Success</span>
+      {/* Background Atmosphere */}
+      <div aria-hidden='true' className='pointer-events-none absolute inset-0'>
+        {/* Grid Pattern Layer
+            - bg-length controls responsive grid scale
+            - bg-position controls horizontal / vertical alignment
+            - opacity controls final grid visibility
+        */}
+        <div className="absolute inset-0 bg-[url('/assets/ornaments/grid-pattern.svg')] bg-[length:clamp(721px,100vw,1442px)_auto] bg-[position:center_top] bg-no-repeat opacity-100 md:bg-[position:calc(50%+48px)_top] lg:bg-[position:calc(50%+110px)_top]" />
+
+        {/* Glow Dot Pattern Layer
+            - data-driven dots for easy add / remove
+            - hover prepares the interaction model
+            - Framer Motion can replace span with motion.span later
+        */}
+        <div aria-hidden='true' className='absolute inset-0'>
+          {HERO_GLOW_DOTS.map((dot) => (
+            <span
+              key={dot.id}
+              className={`absolute size-2 rounded-full bg-neutral-500 opacity-30 shadow-[0_0_8px_rgba(220,73,166,0.18)] transition-all duration-300 hover:opacity-70 hover:shadow-[0_0_14px_rgba(220,73,166,0.45)] ${dot.className}`}
+            />
+          ))}
+        </div>
+
+        {/* Focused Blob Glow Layer
+            Design reference:
+            - smaller / denser purple glow
+            - positioned near the top-left atmosphere area
+            - section-local because it belongs only to Hero composition
+        */}
+        <div className='absolute top-[-96px] left-[-72px] h-[280px] w-[360px] rounded-[50%] bg-[#6831E1]/25 blur-[72px]' />
+
+        {/* Massive Ambient Haze Layer
+            Design reference:
+            - very large soft purple haze
+            - mostly outside the right viewport
+            - creates atmospheric lighting, not a visible object
+        */}
+        <div className='absolute top-[-320px] right-[-560px] h-[960px] w-[960px] rounded-full bg-[#8243EA]/18 blur-[220px]' />
+      </div>
+
+      {/* Content */}
+      <div className='relative z-10 mx-auto flex max-w-[1200px] flex-col items-center px-5 md:px-6'>
+        {/* Badge */}
+        <div className='group relative mb-6 rounded-full bg-[image:var(--gradient-brand)] p-px shadow-[0_0_32px_rgba(135,70,235,0.18)] transition-all duration-300 hover:shadow-[0_0_42px_rgba(220,73,166,0.34)]'>
+          <div className='bg-base-background/90 group-hover:text-base-white flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium text-neutral-200 backdrop-blur-md transition-colors duration-300'>
+            <span aria-hidden='true' className='text-sm'>
+              👨‍💻
+            </span>
+            <span>{HERO_DATA.badge}</span>
+          </div>
+        </div>
+
+        {/* Headline */}
+        <h1 className='text-neutral-25 w-full max-w-[64rem] text-[clamp(2rem,5vw,3rem)] leading-[1.12] font-extrabold tracking-[-0.04em]'>
+          {HERO_DATA.headline.prefix}{' '}
+          <span className='group relative mx-2 inline-block'>
+            <span className='relative z-10 inline-block bg-[image:var(--gradient-brand)] bg-clip-text px-1 py-2 text-transparent'>
+              {HERO_DATA.headline.highlight}
+            </span>
+            <span
+              aria-hidden='true'
+              className='border-brand-pink/60 group-hover:border-brand-purple pointer-events-none absolute -inset-x-2 top-1/2 h-[1.25em] -translate-y-1/2 border shadow-[0_0_14px_rgba(135,70,235,0.22)] transition-all duration-300 group-hover:shadow-[0_0_24px_rgba(220,73,166,0.32)]'
+            />
+            <span
+              aria-hidden='true'
+              className='bg-neutral-25 absolute top-[calc(50%-0.625em)] left-[-0.5rem] h-[0.64rem] w-[1.22rem] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(220,73,166,0.45)]'
+            />
+            <span
+              aria-hidden='true'
+              className='bg-neutral-25 absolute top-[calc(50%-0.625em)] right-[-0.5rem] h-[0.64rem] w-[1.22rem] translate-x-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(220,73,166,0.45)]'
+            />
+            <span
+              aria-hidden='true'
+              className='bg-neutral-25 absolute bottom-[calc(50%-0.625em)] left-[-0.5rem] h-[0.64rem] w-[1.22rem] -translate-x-1/2 translate-y-1/2 shadow-[0_0_8px_rgba(220,73,166,0.45)]'
+            />
+            <span
+              aria-hidden='true'
+              className='bg-neutral-25 absolute right-[-0.5rem] bottom-[calc(50%-0.625em)] h-[0.64rem] w-[1.22rem] translate-x-1/2 translate-y-1/2 shadow-[0_0_8px_rgba(220,73,166,0.45)]'
+            />
+          </span>{' '}
+          {HERO_DATA.headline.suffix}
         </h1>
-        <p className='text-sm-regular md:text-md-regular mt-3 text-neutral-400'>
-          We craft custom IT solutions that align with your goals, ensuring
-          efficiency, security, and innovation
+
+        {/* Description */}
+        <p className='mt-6 w-full max-w-[48rem] text-neutral-400'>
+          {HERO_DATA.description}
         </p>
-        <Button asChild className='mt-6 w-full md:mt-12 md:w-fit'>
-          <Link href='#'>Get Started</Link>
+
+        {/* CTA */}
+        <Button
+          asChild
+          variant='brand'
+          size='brand'
+          className='mt-8 w-full px-0 md:w-[206px]'
+        >
+          <Link href={HERO_DATA.primaryCTA.href}>
+            {HERO_DATA.primaryCTA.label}
+          </Link>
         </Button>
       </div>
 
-      <div
-        className='relative flex-[4.7] basis-80'
-        style={{ height: 'clamp(21.25rem, 52.73vw, 39.81rem)' }}
-      >
-        <SkewMotion asChild>
-          <Image
-            src='/images/hero-image.png'
-            fill
-            alt='hero-image'
-            className='object-contain'
-          />
-        </SkewMotion>
-        <FeatureCard
-          icon={<Icon icon='mingcute:flash-fill' />}
-          title='Elite Solutions'
-          description='Cutting-edge tech, flawless execution'
-          animationDelay={0.2}
-          className='absolute top-[10%] right-1/2 translate-x-[-6.25%]'
+      {/* Wave Ornament */}
+      <div className='relative mt-0 -translate-y-16 md:mt-0 md:-translate-y-8'>
+        <img
+          src='/assets/ornaments/waves-pattern.svg'
+          alt=''
+          aria-hidden='true'
+          className='w-full min-w-[760px] max-w-none object-cover opacity-80 md:min-w-0'
         />
-        <FeatureCard
-          icon={<Icon icon='ri:brain-fill' />}
-          title='Smart Tech'
-          description='Innovation that drives real growth.'
-          animationDelay={0.2}
-          className='absolute top-[43%] left-1/2 translate-x-[37.5%]'
-        />
-        <FeatureCard
-          icon={<Icon icon='bi:bar-chart-fill' />}
-          title='Real Impact'
-          description='We turn ideas into measurable success'
-          animationDelay={0.2}
-          className='absolute top-[49%] right-1/2 translate-x-[-48%]'
-        />
+      </div>
 
-        <div className='from-base-background absolute inset-x-0 bottom-0 h-[20%] bg-linear-to-t to-transparent' />
+      {/* Image Card */}
+      <div className='relative z-10 mx-auto mt-[-112px] max-w-[1200px] px-6 md:mt-[-80px]'>
+        <div className='relative aspect-[1160/459] overflow-hidden rounded-3xl bg-[image:var(--gradient-brand)]'>
+          <div
+            aria-hidden='true'
+            className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.18),transparent_35%),var(--gradient-brand)] opacity-95'
+          />
+
+          <div
+            aria-hidden='true'
+            className='absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.18),transparent_45%)]'
+          />
+
+          {/* 
+            Foreground Hero Image Composition Control
+
+            Tuning Guide:
+            - scale-[1.25]
+              Controls zoom in / zoom out
+
+            - translate-x-[...]
+              Controls left / right position
+
+            - translate-y-[...]
+              Controls top / bottom position
+
+            Important:
+            Hero photos may use different aspect ratios.
+            Tune composition values here instead of changing the frame size.
+          */}
+          <Image
+            src='/assets/avatars/sidiq-kusumah-hero.png'
+            alt='Sidiq Kusumah'
+            width={1160}
+            height={459}
+            priority
+            className='relative z-10 mx-auto h-[clamp(135%,45vw,165%)] w-auto translate-x-[0px] translate-y-[clamp(-35px,-3vw,0px)] transform-gpu object-contain object-center'
+          />
+        </div>
       </div>
     </section>
   );
