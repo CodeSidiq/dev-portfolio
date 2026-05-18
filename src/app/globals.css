@@ -89,6 +89,20 @@
   --shadow-brand-glow: 0 0 56px rgba(135, 70, 235, 0.32);
   --shadow-pink-glow: 0 0 56px rgba(220, 73, 166, 0.24);
 
+  --shadow-glow-brand-xs: 0 0 8px rgba(220, 73, 166, 0.18);
+  --shadow-glow-brand-sm: 0 0 24px rgba(220, 73, 166, 0.28);
+  --shadow-glow-brand-md: 0 0 56px rgba(135, 70, 235, 0.28);
+  --shadow-glow-brand-lg: 0 0 72px rgba(135, 70, 235, 0.34);
+
+  --shadow-glow-brand-hover-sm: 0 0 34px rgba(135, 70, 235, 0.42);
+  --shadow-glow-brand-hover-md: 0 0 80px rgba(220, 73, 166, 0.28);
+  --shadow-glow-brand-hover-lg: 0 0 96px rgba(220, 73, 166, 0.42);
+
+  --motion-duration-base: 300ms;
+  --motion-ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-lift-sm: -0.25rem;
+  --motion-lift-md: -0.5rem;
+
   /* Radius */
   --radius-xxs: 0.125rem;
   --radius-xs: 0.25rem;
@@ -240,3 +254,59 @@ img {
   touch-action: none; /* Disable touch gestures */
   -webkit-user-select: none; /* For Safari */
 }
+
+
+@utility ds-glow-brand-xs {
+  box-shadow: var(--shadow-glow-brand-xs);
+}
+
+@utility ds-glow-brand-sm {
+  box-shadow: var(--shadow-glow-brand-sm);
+}
+
+@utility ds-glow-brand-md {
+  box-shadow: var(--shadow-glow-brand-md);
+}
+
+@utility ds-glow-brand-lg {
+  box-shadow: var(--shadow-glow-brand-lg);
+}
+
+@utility ds-transition-interactive {
+  transition-property: transform, box-shadow, opacity, background-color, border-color, color;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+}
+
+@utility ds-hover-brand-sm {
+  transition-property: transform, box-shadow, opacity, background-color, border-color, color;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+
+  &:hover {
+    box-shadow: var(--shadow-glow-brand-hover-sm);
+  }
+}
+
+@utility ds-hover-brand-md {
+  transition-property: transform, box-shadow, opacity, background-color, border-color, color;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+
+  &:hover {
+    transform: translateY(var(--motion-lift-sm));
+    box-shadow: var(--shadow-glow-brand-hover-md);
+  }
+}
+
+@utility ds-hover-brand-lg {
+  transition-property: transform, box-shadow, opacity, background-color, border-color, color;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+
+  &:hover {
+    transform: translateY(var(--motion-lift-md));
+    box-shadow: var(--shadow-glow-brand-hover-lg);
+  }
+}
+

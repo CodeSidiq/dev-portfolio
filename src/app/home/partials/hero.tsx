@@ -48,14 +48,35 @@ const Hero = () => {
             - very large soft purple haze
             - mostly outside the right viewport
             - creates atmospheric lighting, not a visible object
+
+            Tuning guide:
+            - top-[...] controls vertical position
+              less negative = moves glow down toward the hero photo card
+              more negative = moves glow up toward the navbar area
+
+            - right-[...] controls horizontal position
+              less negative = moves glow into the viewport
+              more negative = pushes glow outside the viewport
+
+            - h-[...] / w[...] control glow field size
+              larger = wider ambient spread
+              smaller = tighter ambient spread
+
+            - blur-[...] controls softness
+              larger = softer and more diffuse
+              smaller = sharper and more visible
+
+            - bg-[#8243EA]/18 controls intensity
+              increase only if the glow feels too weak
+              decrease if it starts overpowering the content
         */}
-        <div className='absolute top-[-320px] right-[-560px] h-[960px] w-[960px] rounded-full bg-[#8243EA]/18 blur-[220px]' />
+        <div className='absolute top-[-180px] right-[-520px] h-[1120px] w-[1120px] rounded-full bg-[#8243EA]/18 blur-[240px]' />
       </div>
 
       {/* Content */}
       <div className='relative z-10 mx-auto flex max-w-[1200px] flex-col items-center px-5 md:px-6'>
         {/* Badge */}
-        <div className='group relative mb-6 rounded-full bg-[image:var(--gradient-brand)] p-px shadow-[0_0_32px_rgba(135,70,235,0.18)] transition-all duration-300 hover:shadow-[0_0_42px_rgba(220,73,166,0.34)]'>
+        <div className='ds-glow-brand-sm ds-hover-brand-sm group relative mb-6 rounded-full bg-[image:var(--gradient-brand)] p-px'>
           <div className='bg-base-background/90 group-hover:text-base-white flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium text-neutral-200 backdrop-blur-md transition-colors duration-300'>
             <span aria-hidden='true' className='text-sm'>
               👨‍💻
@@ -96,7 +117,7 @@ const Hero = () => {
         </h1>
 
         {/* Description */}
-        <p className='mt-6 w-full max-w-[48rem] text-neutral-400'>
+        <p className='mt-6 w-full max-w-[48rem] text-[var(--text-lg)] leading-[var(--text-lg--line-height)] font-normal text-neutral-400'>
           {HERO_DATA.description}
         </p>
 
